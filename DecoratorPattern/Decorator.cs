@@ -1,14 +1,24 @@
 ﻿using Design_Patterns_Assignment;
 
 using System;
+using Design_Patterns_Assignment.DecoratorPattern.Decorators;
+using Design_Patterns_Assignment.DecoratorPattern;
 
-namespace Design_Patterns_Assignment
+namespace Design_Patterns_Assignment.DecoratorPattern
 {
     internal class Decorator
     {
+        public static IWord Word { get; set; }
+
+        public Decorator(IRegularWord regularWord)
+        {
+            Word = regularWord;
+        }
+
         internal static void Run()
         {
             // Refactor this code so that it uses the Decorator Pattern
+            var newWord = Word;
             Console.WriteLine("Decorator");
             Console.WriteLine("Please enter the text.");
             string textInput = Console.ReadLine();
@@ -25,6 +35,7 @@ namespace Design_Patterns_Assignment
             Console.WriteLine("SuperScript");
             Console.WriteLine();
             Console.WriteLine("Type the tags you want separated by space");
+
             string tagSelection = Console.ReadLine();
             string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
             Console.WriteLine(result);

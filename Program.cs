@@ -1,8 +1,9 @@
-﻿using Design_Patterns_Assignment;
-
+﻿using Autofac;
+using Design_Patterns_Assignment;
+using Design_Patterns_Assignment.DecoratorPattern;
 using System;
 
-namespace ConsoleApp1
+namespace Design_Patterns_Assignment
 {
     internal class Program
     {
@@ -10,7 +11,7 @@ namespace ConsoleApp1
         {
             // Run Autofac Configure
             var container = AFConfig.Configure();
-
+           
             Decorator.Run();
             Repository.Run();
             Strategy.Run();

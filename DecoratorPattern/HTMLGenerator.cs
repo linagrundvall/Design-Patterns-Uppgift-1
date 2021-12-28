@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Design_Patterns_Assignment
+namespace Design_Patterns_Assignment.DecoratorPattern
 {
     class HTMLGenerator
     {
