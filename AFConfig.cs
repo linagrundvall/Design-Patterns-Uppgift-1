@@ -5,7 +5,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
-using Design_Patterns_Assignment.Decorator.Decorators;
+using Design_Patterns_Assignment.DecoratorPattern;
+using Design_Patterns_Assignment.DecoratorPattern.Decorators;
 
 namespace Design_Patterns_Assignment
 {
@@ -15,10 +16,7 @@ namespace Design_Patterns_Assignment
         {
             var builder = new ContainerBuilder();
 
-            // Register Main Application
-            //builder.RegisterType<Application>().As<IApplication>();
-
-            //Register Words
+            //DecoratorPattern Words
             //builder.RegisterType<Bold>().As<IBold>();
             //builder.RegisterType<Deleted>().As<IDeleted>();
             //builder.RegisterType<Emphasized>().As<IEmphasized>();
@@ -30,16 +28,18 @@ namespace Design_Patterns_Assignment
             //builder.RegisterType<SubScript>().As<ISubScript>();
             //builder.RegisterType<SuperScript>().As<ISuperScript>();
 
+            //builder.RegisterType<RegularWord>().As<IRegularWord>();
+
             //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
             //    .Where(i => i.Namespace.Contains("Decorators"))
             //    .As(i => i.GetInterfaces()
             //    .FirstOrDefault(n => n.Name == "I" + i.Name));
 
 
-            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
-                .Where(i => i.Namespace.Contains("Word"))
-                .As(i => i.GetInterfaces()
-                .FirstOrDefault(n => n.Name == "I" + i.Name));
+            //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+            //    .Where(i => i.Namespace.Contains("Word"))
+            //    .As(i => i.GetInterfaces()
+            //    .FirstOrDefault(n => n.Name == "I" + i.Name));
 
             return builder.Build();
         }

@@ -19,5 +19,10 @@ namespace Design_Patterns_Assignment.DecoratorPattern
         {
             return Word.GetDescription() + ", " + Description;
         }
+
+        public string GetTextInput()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

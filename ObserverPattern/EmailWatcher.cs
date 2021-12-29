@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Design_Patterns_Assignment
+namespace Design_Patterns_Assignment.ObserverPattern
 {
-    class Observer
+    class EmailWatcher
     {
         internal static void Run()
         {
+
             // Refactor this code so that it uses the Observer Pattern
             Console.WriteLine("Observer");
             var email = "";
@@ -20,5 +21,9 @@ namespace Design_Patterns_Assignment
             Console.WriteLine(email);
             Console.WriteLine();
         }
+            void Update(DateTime time)
+            {
+                Console.WriteLine($"The current time is {time}");
+            }
     }
 }

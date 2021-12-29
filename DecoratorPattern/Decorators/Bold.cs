@@ -10,7 +10,11 @@ namespace Design_Patterns_Assignment.DecoratorPattern.Decorators
     {
         public Bold(IWord word) : base(word)
         {
-            Description = "The word in bold";
+            Description = "bold";
+
+            //textInput = "<b>" + textInput + "</b>";
         }
+
+
     }
 }

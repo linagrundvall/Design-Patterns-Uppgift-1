@@ -36,10 +36,63 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             Console.WriteLine();
             Console.WriteLine("Type the tags you want separated by space");
 
-            string tagSelection = Console.ReadLine();
-            string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
-            Console.WriteLine(result);
-            Console.WriteLine();
+            //string tagSelection = Console.ReadLine();
+
+            //string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
+            //Console.WriteLine(result);
+            //Console.WriteLine();
+
+            while (true)
+            {
+                var userInput = Console.ReadLine().ToLower();
+
+                switch (userInput)
+                {
+                    case "bold":
+                        Console.WriteLine("The word in bold: ");
+                        Word = new Bold(Word);
+                        break;
+                    case "deleted":
+                        Console.WriteLine("The word in Deleted");
+                        Word = new Deleted(Word);
+                        break;
+                    case "emphasized":
+                        Console.WriteLine("The word in Emphasized");
+                        Word = new Emphasized(Word);
+                        break;
+                    case "important":
+                        Console.WriteLine("The word in Important");
+                        Word = new Important(Word);
+                        break;
+                    case "inserted":
+                        Console.WriteLine("The word in Inserted");
+                        Word = new Inserted(Word);
+                        break;
+                    case "italic":
+                        Console.WriteLine("The word in Italic");
+                        Word = new Italic(Word);
+                        break;
+                    case "marked":
+                        Console.WriteLine("The word in Marked");
+                        Word = new Marked(Word);
+                        break;
+                    case "smaller":
+                        Console.WriteLine("The word in Smaller");
+                        Word = new Smaller(Word);
+                        break;
+                    case "subScript":
+                        Console.WriteLine("The word in SubScript");
+                        Word = new SubScript(Word);
+                        break;
+                    case "superScript":
+                        Console.WriteLine("The word in SuperScript");
+                        Word = new SuperScript(Word);
+                        break;
+                    default:
+                        Console.Write("That is not a valid choice");
+                        break;
+                }
+            }
         }
     }
 }
