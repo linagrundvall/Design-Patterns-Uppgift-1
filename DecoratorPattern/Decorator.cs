@@ -36,11 +36,6 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             Console.WriteLine();
             Console.WriteLine("Type the tags you want separated by space");
 
-            //string tagSelection = Console.ReadLine();
-
-            //string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
-            //Console.WriteLine(result);
-            //Console.WriteLine();
 
             while (true)
             {
@@ -49,8 +44,9 @@ namespace Design_Patterns_Assignment.DecoratorPattern
                 switch (userInput)
                 {
                     case "bold":
-                        Console.WriteLine("The word in bold: ");
+                        Console.WriteLine("Bold");
                         Word = new Bold(Word);
+                        //Console.WriteLine(Word.GetTag(textInput));
                         break;
                     case "deleted":
                         Console.WriteLine("The word in Deleted");
@@ -92,6 +88,12 @@ namespace Design_Patterns_Assignment.DecoratorPattern
                         Console.Write("That is not a valid choice");
                         break;
                 }
+
+            //string tagSelection = Console.ReadLine();
+            //string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
+            //Console.WriteLine(result);
+            //Console.WriteLine();
+
             }
         }
     }

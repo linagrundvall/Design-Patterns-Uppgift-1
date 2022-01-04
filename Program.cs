@@ -2,6 +2,7 @@
 using Design_Patterns_Assignment;
 using Design_Patterns_Assignment.DecoratorPattern;
 using Design_Patterns_Assignment.ObserverPattern;
+using Design_Patterns_Assignment.RepositoryPattern;
 using System;
 
 namespace Design_Patterns_Assignment

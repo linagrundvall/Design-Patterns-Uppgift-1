@@ -13,7 +13,7 @@ namespace Design_Patterns_Assignment.DecoratorPattern
         public RegularWord()
         {
             Description = "Regular Word";
-            //TextInput = "";
+            TextInput = "hej";
         }
 
         public string GetDescription()
@@ -21,9 +21,14 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             return Description;
         }
 
-        public string GetTextInput()
+        public string GetTag()
         {
             return TextInput;
         }
+
+        //public void SetTextInput(string textInput)
+        //{
+        //    TextInput = textInput;
+        //}
     }
 }

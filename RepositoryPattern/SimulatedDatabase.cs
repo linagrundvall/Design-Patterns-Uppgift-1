@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Design_Patterns_Assignment
+namespace Design_Patterns_Assignment.RepositoryPattern
 {
-    class SimulatedDatabase
+    class SimulatedDatabase : ISimulatedDatabase
     {
-        internal static string Load(string v)
+        public string Load(string v)
         {
             return v;
         }
 
-        internal static void Save(string data)
+        public void Save(string data)
         {
             Console.WriteLine($"Saving data \"{data}\"");
         }

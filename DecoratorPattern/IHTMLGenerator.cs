@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment.DecoratorPattern
 {
-    public interface IWord
+    public interface IHTMLGenerator
     {
-        string GetDescription();
-        string GetTag();
+        internal string TagProcessor(string tagSelection, string textInput);
     }
 }

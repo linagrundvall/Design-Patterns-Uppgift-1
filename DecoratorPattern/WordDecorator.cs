@@ -10,6 +10,8 @@ namespace Design_Patterns_Assignment.DecoratorPattern
     {
         public IWord Word { get; set; }
         public string Description;
+        public string Tag;
+        //public string TextInput { get; set; }
 
         public WordDecorator(IWord word)
         {
@@ -20,9 +22,9 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             return Word.GetDescription() + ", " + Description;
         }
 
-        public string GetTextInput()
+        public string GetTag()
         {
-            throw new NotImplementedException();
+            return Word.GetTag() + Tag;
         }
     }
 }
