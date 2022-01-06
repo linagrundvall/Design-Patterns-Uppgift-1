@@ -21,11 +21,15 @@ namespace Design_Patterns_Assignment
 
             using var scope = container.BeginLifetimeScope();
             var decorator = scope.Resolve<IDecorator>();
-
             decorator.Run();
 
+            var repository = scope.Resolve<IRepository>();
+            decorator.Run();
+
+
+
             //Decorator.Run();
-            Repository.Run();
+            //Repository.Run();
             Strategy.Run();
             Observer.Run();
         }     

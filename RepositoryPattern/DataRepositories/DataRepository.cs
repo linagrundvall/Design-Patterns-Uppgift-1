@@ -1,11 +1,6 @@
-﻿using Design_Patterns_Assignment.RepositoryPattern;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Design_Patterns_Assignment.RepositoryPattern.DB;
 
-namespace Design_Patterns_Assignment.RepositoryPattern
+namespace Design_Patterns_Assignment.RepositoryPattern.DataRepositories
 {
     class DataRepository : IDataRepository
     {
