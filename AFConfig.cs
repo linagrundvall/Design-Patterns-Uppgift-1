@@ -19,14 +19,14 @@ namespace Design_Patterns_Assignment
             //DecoratorPattern Words
             builder.RegisterType<Bold>().As<IBold>();
             builder.RegisterType<Deleted>().As<IDeleted>();
-            builder.RegisterType<Emphasized>().As<IEmphasized>();
-            builder.RegisterType<Important>().As<IImportant>();
-            builder.RegisterType<Inserted>().As<IInserted>();
-            builder.RegisterType<Italic>().As<IItalic>();
-            builder.RegisterType<Marked>().As<IMarked>();
-            builder.RegisterType<Smaller>().As<ISmaller>();
-            builder.RegisterType<SubScript>().As<ISubScript>();
-            builder.RegisterType<SuperScript>().As<ISuperScript>();
+            //builder.RegisterType<Emphasized>().As<IEmphasized>();
+            //builder.RegisterType<Important>().As<IImportant>();
+            //builder.RegisterType<Inserted>().As<IInserted>();
+            //builder.RegisterType<Italic>().As<IItalic>();
+            //builder.RegisterType<Marked>().As<IMarked>();
+            //builder.RegisterType<Smaller>().As<ISmaller>();
+            //builder.RegisterType<SubScript>().As<ISubScript>();
+            //builder.RegisterType<SuperScript>().As<ISuperScript>();
 
             builder.RegisterType<RegularWord>().As<IRegularWord>();
 

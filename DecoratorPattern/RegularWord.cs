@@ -27,15 +27,5 @@ namespace Design_Patterns_Assignment.DecoratorPattern
         {
             return Tag;
         }
-
-        public void SetTextInput()
-        {
-            
-        }
-
-        public string GetTextInput()
-        {
-            return Input;
-        }
     }
 }

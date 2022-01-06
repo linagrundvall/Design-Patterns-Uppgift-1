@@ -26,8 +26,7 @@ namespace Design_Patterns_Assignment.DecoratorPattern
 
         public string GetTag()
         {
-            Console.WriteLine(Tag);
-            return Word.GetTag() + Tag;
+            return Word.GetTag() + Tag + '\n';
         }
     }
 }

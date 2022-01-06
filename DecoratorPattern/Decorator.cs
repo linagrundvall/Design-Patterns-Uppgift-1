@@ -8,14 +8,14 @@ namespace Design_Patterns_Assignment.DecoratorPattern
 {
     internal class Decorator : IDecorator
     {
-        public static IWord Word { get; set; }
+        public IWord Word { get; set; }
 
         public Decorator(IRegularWord regularWord)
         {
             Word = regularWord;
         }
 
-        internal static void Run()
+        public void Run()
         {
             
             var newWord = Word;
@@ -43,11 +43,14 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             while (true)
             {
                 var userInput = Console.ReadLine().ToLower();
+                var splitUserInput = userInput.Split(" ");
 
-                switch (userInput)
+                foreach (var input in splitUserInput)
+                {
+
+                switch (input)
                 {
                     case "bold":
-                        Console.WriteLine("Bold");
                         Word = new Bold(Word, textInput);
                         break;
                     case "deleted":
@@ -87,18 +90,19 @@ namespace Design_Patterns_Assignment.DecoratorPattern
                         Word = new SuperScript(Word, textInput);
                         break;
                     case "done":
-                        Console.WriteLine($"Your chosen tags are: + {Word.GetTag()}");
+                        Console.WriteLine($"Your chosen tags are: \n{ Word.GetTag()}");
                         Word = newWord;
                         break;
                     default:
                         Console.Write("That is not a valid choice");
                         break;
                 }
+                }
 
-            //string tagSelection = Console.ReadLine();
-            //string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
-            //Console.WriteLine(result);
-            //Console.WriteLine();
+                //string tagSelection = Console.ReadLine();
+                //string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
+                //Console.WriteLine(result);
+                //Console.WriteLine();
 
             }
         }
