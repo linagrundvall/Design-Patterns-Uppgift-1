@@ -17,7 +17,6 @@ namespace Design_Patterns_Assignment.DecoratorPattern
 
         public void Run()
         {
-            
             var newWord = Word;
 
             Console.WriteLine("Decorator");
@@ -39,7 +38,6 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             Console.WriteLine("Type the tags you want separated by space");
             Console.WriteLine("Type Done when you are done");
 
-
             while (true)
             {
                 var userInput = Console.ReadLine().ToLower();
@@ -54,39 +52,30 @@ namespace Design_Patterns_Assignment.DecoratorPattern
                         Word = new Bold(Word, textInput);
                         break;
                     case "deleted":
-                        Console.WriteLine("The word in Deleted");
                         Word = new Deleted(Word, textInput);
                         break;
                     case "emphasized":
-                        Console.WriteLine("The word in Emphasized");
                         Word = new Emphasized(Word, textInput);
                         break;
                     case "important":
-                        Console.WriteLine("The word in Important");
                         Word = new Important(Word, textInput);
                         break;
                     case "inserted":
-                        Console.WriteLine("The word in Inserted");
                         Word = new Inserted(Word, textInput);
                         break;
                     case "italic":
-                        Console.WriteLine("The word in Italic");
                         Word = new Italic(Word, textInput);
                         break;
                     case "marked":
-                        Console.WriteLine("The word in Marked");
                         Word = new Marked(Word, textInput);
                         break;
                     case "smaller":
-                        Console.WriteLine("The word in Smaller");
                         Word = new Smaller(Word, textInput);
                         break;
-                    case "subScript":
-                        Console.WriteLine("The word in SubScript");
+                    case "subscript":
                         Word = new SubScript(Word, textInput);
                         break;
-                    case "superScript":
-                        Console.WriteLine("The word in SuperScript");
+                    case "superscript":
                         Word = new SuperScript(Word, textInput);
                         break;
                     case "done":
@@ -98,12 +87,6 @@ namespace Design_Patterns_Assignment.DecoratorPattern
                         break;
                 }
                 }
-
-                //string tagSelection = Console.ReadLine();
-                //string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
-                //Console.WriteLine(result);
-                //Console.WriteLine();
-
             }
         }
     }

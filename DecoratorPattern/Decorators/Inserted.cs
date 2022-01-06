@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment.DecoratorPattern.Decorators
 {
-    public class Inserted : WordDecorator, IWord
+    internal class Inserted : WordDecorator, IInserted
     {
         public Inserted(IWord word, string textInput) : base(word, textInput)
         {
             Description = "The word in inserted";
+            Tag = "<ins>" + textInput + "</ins>";
         }
     }
 }
