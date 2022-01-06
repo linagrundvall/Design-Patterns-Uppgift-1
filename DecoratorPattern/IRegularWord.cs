@@ -2,6 +2,5 @@
 {
     internal interface IRegularWord : IWord
     {
-        
     }
 }

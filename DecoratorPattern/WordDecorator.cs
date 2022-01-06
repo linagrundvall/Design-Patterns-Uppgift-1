@@ -11,11 +11,12 @@ namespace Design_Patterns_Assignment.DecoratorPattern
         public IWord Word { get; set; }
         public string Description;
         public string Tag;
-        //public string TextInput { get; set; }
+        
 
         public WordDecorator(IWord word)
         {
             Word = word;
+            
         }
         public string GetDescription()
         {

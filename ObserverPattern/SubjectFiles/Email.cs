@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Design_Patterns_Assignment.ObserverPattern.ObserverFiles;
+using System;
 using System.Collections.Generic;
 
-namespace Design_Patterns_Assignment.ObserverPattern
+namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
 {
-    internal class Email
+    internal class Email : IEmail
     {
         public List<IObserver> Observers { get; set; }
         public DateTime Time { get; set; }
@@ -23,7 +24,7 @@ namespace Design_Patterns_Assignment.ObserverPattern
             Observers.Remove(observer);
         }
 
-        public void notifyObservers()
+        public void NotifyObservers()
         {
             foreach (var observer in Observers)
             {
@@ -34,10 +35,8 @@ namespace Design_Patterns_Assignment.ObserverPattern
         public void UpdateTime()
         {
             Time = DateTime.Now;
-            notifyObservers();
+            NotifyObservers();
         }
-
-
 
         internal static string Check()
         {

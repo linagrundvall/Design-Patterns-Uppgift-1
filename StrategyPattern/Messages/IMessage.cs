@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Design_Patterns_Assignment.ObserverPattern
+namespace Design_Patterns_Assignment.StrategyPattern.Messages
 {
-    interface IObserver
+    internal interface IMessage
     {
-        void Update(DateTime Time);
+        void Send(string message);
     }
 }

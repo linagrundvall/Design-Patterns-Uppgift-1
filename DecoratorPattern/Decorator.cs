@@ -6,7 +6,7 @@ using Design_Patterns_Assignment.DecoratorPattern;
 
 namespace Design_Patterns_Assignment.DecoratorPattern
 {
-    internal class Decorator
+    internal class Decorator : IDecorator
     {
         public static IWord Word { get; set; }
 
@@ -17,10 +17,10 @@ namespace Design_Patterns_Assignment.DecoratorPattern
 
         internal static void Run()
         {
-            // Refactor this code so that it uses the Decorator Pattern
             var newWord = Word;
+
             Console.WriteLine("Decorator");
-            Console.WriteLine("Please enter the text.");
+            Console.WriteLine("Please enter the text that you want decorated");
             string textInput = Console.ReadLine();
             Console.WriteLine();
             Console.WriteLine("Bold");
@@ -35,6 +35,7 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             Console.WriteLine("SuperScript");
             Console.WriteLine();
             Console.WriteLine("Type the tags you want separated by space");
+            Console.WriteLine("Type Done when you are done");
 
 
             while (true)
@@ -83,6 +84,10 @@ namespace Design_Patterns_Assignment.DecoratorPattern
                     case "superScript":
                         Console.WriteLine("The word in SuperScript");
                         Word = new SuperScript(Word);
+                        break;
+                    case "done":
+                        Console.WriteLine($"Your chosen tags are: + {Word.GetTag()}");
+                        Word = newWord;
                         break;
                     default:
                         Console.Write("That is not a valid choice");

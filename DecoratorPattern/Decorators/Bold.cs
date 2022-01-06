@@ -8,20 +8,16 @@ namespace Design_Patterns_Assignment.DecoratorPattern.Decorators
 {
     internal class Bold : WordDecorator, IBold
     {
-        public IHTMLGenerator HTMLGenerator { get; set; }
-
-
+        public string textInput { get; set; }
         public Bold(IWord word) : base(word)
-        {
+        {       
             Description = "bold";
-            //Tag = "<b>" + "hej" + "</b>";
+            Tag = "<b>" + textInput + "</b>";
         }
 
-        public string GetTag(string textInput)
-        {
-            //var tag = HTMLGenerator.TagProcessor(Description, textInput);
-            //return tag;
-            return "bold";
-        }
+        //public string GetTag()
+        //{
+        //    return "<b>" + textInput + "</b>";
+        //}
     }
 }
