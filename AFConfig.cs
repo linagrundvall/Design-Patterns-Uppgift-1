@@ -16,7 +16,6 @@ namespace Design_Patterns_Assignment
         {
             var builder = new ContainerBuilder();
 
-            //DecoratorPattern Words
             builder.RegisterType<Bold>().As<IBold>();
             builder.RegisterType<Deleted>().As<IDeleted>();
             builder.RegisterType<Emphasized>().As<IEmphasized>();
@@ -29,7 +28,6 @@ namespace Design_Patterns_Assignment
             builder.RegisterType<SuperScript>().As<ISuperScript>();
 
             builder.RegisterType<RegularWord>().As<IRegularWord>();
-
             builder.RegisterType<Decorator>().As<IDecorator>();
 
             //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
