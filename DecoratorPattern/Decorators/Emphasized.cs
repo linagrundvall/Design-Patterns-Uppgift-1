@@ -8,7 +8,7 @@ namespace Design_Patterns_Assignment.DecoratorPattern.Decorators
 {
     public class Emphasized : WordDecorator, IWord
     {
-        public Emphasized(IWord word) : base(word)
+        public Emphasized(IWord word, string textInput) : base(word, textInput)
         {
             Description = "The word in emphasized";
         }

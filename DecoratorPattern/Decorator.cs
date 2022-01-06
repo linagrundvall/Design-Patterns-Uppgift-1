@@ -17,11 +17,13 @@ namespace Design_Patterns_Assignment.DecoratorPattern
 
         internal static void Run()
         {
+            
             var newWord = Word;
 
             Console.WriteLine("Decorator");
             Console.WriteLine("Please enter the text that you want decorated");
             string textInput = Console.ReadLine();
+            
             Console.WriteLine();
             Console.WriteLine("Bold");
             Console.WriteLine("Deleted");
@@ -46,44 +48,43 @@ namespace Design_Patterns_Assignment.DecoratorPattern
                 {
                     case "bold":
                         Console.WriteLine("Bold");
-                        Word = new Bold(Word);
-                        //Console.WriteLine(Word.GetTag(textInput));
+                        Word = new Bold(Word, textInput);
                         break;
                     case "deleted":
                         Console.WriteLine("The word in Deleted");
-                        Word = new Deleted(Word);
+                        Word = new Deleted(Word, textInput);
                         break;
                     case "emphasized":
                         Console.WriteLine("The word in Emphasized");
-                        Word = new Emphasized(Word);
+                        Word = new Emphasized(Word, textInput);
                         break;
                     case "important":
                         Console.WriteLine("The word in Important");
-                        Word = new Important(Word);
+                        Word = new Important(Word, textInput);
                         break;
                     case "inserted":
                         Console.WriteLine("The word in Inserted");
-                        Word = new Inserted(Word);
+                        Word = new Inserted(Word, textInput);
                         break;
                     case "italic":
                         Console.WriteLine("The word in Italic");
-                        Word = new Italic(Word);
+                        Word = new Italic(Word, textInput);
                         break;
                     case "marked":
                         Console.WriteLine("The word in Marked");
-                        Word = new Marked(Word);
+                        Word = new Marked(Word, textInput);
                         break;
                     case "smaller":
                         Console.WriteLine("The word in Smaller");
-                        Word = new Smaller(Word);
+                        Word = new Smaller(Word, textInput);
                         break;
                     case "subScript":
                         Console.WriteLine("The word in SubScript");
-                        Word = new SubScript(Word);
+                        Word = new SubScript(Word, textInput);
                         break;
                     case "superScript":
                         Console.WriteLine("The word in SuperScript");
-                        Word = new SuperScript(Word);
+                        Word = new SuperScript(Word, textInput);
                         break;
                     case "done":
                         Console.WriteLine($"Your chosen tags are: + {Word.GetTag()}");

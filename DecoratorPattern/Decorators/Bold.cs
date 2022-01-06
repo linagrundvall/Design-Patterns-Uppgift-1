@@ -8,16 +8,10 @@ namespace Design_Patterns_Assignment.DecoratorPattern.Decorators
 {
     internal class Bold : WordDecorator, IBold
     {
-        public string textInput { get; set; }
-        public Bold(IWord word) : base(word)
+        public Bold(IWord word, string textInput) : base(word, textInput)
         {       
             Description = "bold";
             Tag = "<b>" + textInput + "</b>";
         }
-
-        //public string GetTag()
-        //{
-        //    return "<b>" + textInput + "</b>";
-        //}
     }
 }

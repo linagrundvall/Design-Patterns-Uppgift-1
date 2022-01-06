@@ -8,7 +8,7 @@ namespace Design_Patterns_Assignment.DecoratorPattern.Decorators
 {
     public class Smaller : WordDecorator, IWord
     {
-        public Smaller(IWord word) : base(word)
+        public Smaller(IWord word, string textInput) : base(word, textInput)
         {
             Description = "The word in smaller";
         }

@@ -8,7 +8,7 @@ namespace Design_Patterns_Assignment.DecoratorPattern.Decorators
 {
     public class SubScript : WordDecorator, IWord
     {
-        public SubScript(IWord word) : base(word) 
+        public SubScript(IWord word, string textInput) : base(word, textInput)
         { 
             Description = "The word in SubScript"; 
         }

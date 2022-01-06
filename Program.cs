@@ -12,9 +12,14 @@ namespace Design_Patterns_Assignment
     {
         private static void Main(string[] args)
         {
-            // Run Autofac Configure
-            var container = AFConfig.Configure();
-           
+            //// Run Autofac Configure
+            //var container = AFConfig.Configure();
+
+            // Create an instance of IApplication since we are not using a constructor here
+            //using var scope = container.BeginLifetimeScope();
+            //var app = scope.Resolve<IApplication>();
+
+
             Decorator.Run();
             Repository.Run();
             Strategy.Run();

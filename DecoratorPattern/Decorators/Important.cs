@@ -8,7 +8,7 @@ namespace Design_Patterns_Assignment.DecoratorPattern.Decorators
 {
     public class Important : WordDecorator, IWord
     {
-        public Important(IWord word) : base(word)
+        public Important(IWord word, string textInput) : base(word, textInput)
         {
             Description = "The word in important";
         }

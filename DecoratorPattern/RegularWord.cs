@@ -8,8 +8,10 @@ namespace Design_Patterns_Assignment.DecoratorPattern
 {
     internal class RegularWord : IRegularWord
     {
-        public string Description { get; private set; }
+        public string Description { get; set; }
         public string Tag { get; set; }
+        public string Input;
+
         public RegularWord()
         {
             Description = "Regular Word";
@@ -26,9 +28,14 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             return Tag;
         }
 
-        //public void SetTextInput(string textInput)
-        //{
-        //    TextInput = textInput;
-        //}
+        public void SetTextInput()
+        {
+            
+        }
+
+        public string GetTextInput()
+        {
+            return Input;
+        }
     }
 }
