@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment.StrategyPattern.Messages
 {
@@ -10,12 +6,7 @@ namespace Design_Patterns_Assignment.StrategyPattern.Messages
     {
         public void Send(string message)
         {
-            Console.WriteLine($"sending \"{message}\" as an email");
+            Console.WriteLine($"Sending \"{message}\" as an email.");
         }
-
-        //internal static void SendEmail(string message)
-        //{
-        //    Console.WriteLine($"sending \"{message}\" as an email");
-        //}
     }
 }

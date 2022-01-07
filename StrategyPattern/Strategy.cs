@@ -17,15 +17,13 @@ namespace Design_Patterns_Assignment.StrategyPattern
             Email = email;
             SMS = sms;
             FacebookMessage = facebookMessage;
-            //MessageHandler.Message = Email;
         }
 
         public void Run()
         {
             Console.WriteLine("Strategy");
             Console.WriteLine("Please write your message:");
-            //var message = Console.ReadLine();
-            var message = "Hej";
+            var message = Console.ReadLine();
 
             Console.WriteLine("Select an action");
             Console.WriteLine("1. Send message via Email");
@@ -37,26 +35,18 @@ namespace Design_Patterns_Assignment.StrategyPattern
                 var userInput = Console.ReadKey(intercept: true).Key;
                 switch (userInput)
                 {
-                    //case ConsoleKey.D1:
-                    //case ConsoleKey.NumPad1:
-                    //    Console.WriteLine("Sending message");
-                    //    MessageHandler.Send(message);
-                    //    break;
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
-                        Console.WriteLine("Sending message via Email");
                         MessageHandler.Message = Email;
                         MessageHandler.Send(message);
                         break;
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
-                        Console.WriteLine("Sending message via SMS");
                         MessageHandler.Message = SMS;
                         MessageHandler.Send(message);
                         break;
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
-                        Console.WriteLine("Sending message via Facebook Message");
                         MessageHandler.Message = FacebookMessage;
                         MessageHandler.Send(message);
                         break;
@@ -64,17 +54,7 @@ namespace Design_Patterns_Assignment.StrategyPattern
                         Console.Write("That is not a valid choice");
                         break;
                 }
-
             }
-
-            //MessageHandler.SendEmail(message);
-            //MessageHandler.SendSMS(message);
-            //MessageHandler.SendFacebookMessage(message);
-
-            // What i want to happen to happen is
-            //
-            // Change type of message to send to sms etc.
-            // send message            
         }
     }
 }
