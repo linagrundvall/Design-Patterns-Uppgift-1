@@ -1,6 +1,11 @@
-﻿namespace Design_Patterns_Assignment.RepositoryPattern
+﻿using Design_Patterns_Assignment.RepositoryPattern.DataRepositories;
+
+namespace Design_Patterns_Assignment.RepositoryPattern
 {
-    interface IRepository
+    internal interface IRepository
     {
+        IDataRepository DataRepository { get; set; }
+
+        void Run();
     }
 }

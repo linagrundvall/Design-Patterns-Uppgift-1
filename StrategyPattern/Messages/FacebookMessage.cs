@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment.StrategyPattern.Messages
 {
-    internal class FacebookMessage : IMessage, IFacebookMessage
+    internal class FacebookMessage : IFacebookMessage
     {
         public void Send(string message)
         {
             Console.WriteLine($"sending \"{message}\" as a facebookmessage");
         }
+
+        //internal static void SendFacebookMessage(string message)
+        //{
+        //    Console.WriteLine($"sending \"{message}\" as a facebookmessage");
+        //}
     }
 }

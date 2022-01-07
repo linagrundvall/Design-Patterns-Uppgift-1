@@ -38,7 +38,7 @@ namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
             NotifyObservers();
         }
 
-        internal static string Check()
+        internal string Check()
         {
             var evenMinute = DateTime.Now.Minute % 2;
             if (evenMinute==0)

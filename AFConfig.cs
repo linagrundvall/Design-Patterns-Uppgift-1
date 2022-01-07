@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 using Autofac;
 using Design_Patterns_Assignment.DecoratorPattern;
 using Design_Patterns_Assignment.DecoratorPattern.Decorators;
+using Design_Patterns_Assignment.ObserverPattern;
+using Design_Patterns_Assignment.RepositoryPattern;
+using Design_Patterns_Assignment.RepositoryPattern.DataRepositories;
+using Design_Patterns_Assignment.RepositoryPattern.DB;
+using Design_Patterns_Assignment.StrategyPattern;
+using Design_Patterns_Assignment.StrategyPattern.MessageHandlers;
+using Design_Patterns_Assignment.StrategyPattern.Messages;
 
 namespace Design_Patterns_Assignment
 {
@@ -16,6 +23,7 @@ namespace Design_Patterns_Assignment
         {
             var builder = new ContainerBuilder();
 
+            //Decorator Pattern
             builder.RegisterType<Bold>().As<IBold>();
             builder.RegisterType<Deleted>().As<IDeleted>();
             builder.RegisterType<Emphasized>().As<IEmphasized>();
@@ -29,6 +37,23 @@ namespace Design_Patterns_Assignment
 
             builder.RegisterType<RegularWord>().As<IRegularWord>();
             builder.RegisterType<Decorator>().As<IDecorator>();
+
+            //Repository Pattern
+            builder.RegisterType<Repository>().As<IRepository>();
+            builder.RegisterType<SimulatedDatabase>().As<ISimulatedDatabase>();
+            builder.RegisterType<DataRepository>().As<IDataRepository>();
+
+            //Strategy Pattern
+            builder.RegisterType<Strategy>().As<IStrategy>();
+            builder.RegisterType<MessageHandler>().As<IMessageHandler>();
+            builder.RegisterType<Email>().As<IEmail>();
+            builder.RegisterType<SMS>().As<ISMS>();
+            builder.RegisterType<FacebookMessage>().As<IFacebookMessage>();
+
+            //Observer Pattern
+            builder.RegisterType<Observer>().As<IObserver>();
+
+
 
             //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
             //    .Where(i => i.Namespace.Contains("Decorators"))

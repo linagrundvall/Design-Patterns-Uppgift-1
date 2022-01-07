@@ -3,27 +3,15 @@ using System;
 
 namespace Design_Patterns_Assignment.StrategyPattern.MessageHandlers
 {
-    internal class MessageHandler
+    internal class MessageHandler : IMessageHandler
     {
         public IMessage Message { get; set; }
+        //public IMessage Email { get; set; }
+        //public IMessage SMS { get; set; }
+        //public IMessage FacebookMessage { get; set; }
         public void Send(string message)
         {
             Message.Send(message);
         }
-
-        //internal static void SendEmail(string message)
-        //{
-        //    Console.WriteLine($"sending \"{message}\" as an email");
-        //}
-
-        //internal static void SendSMS(string message)
-        //{
-        //    Console.WriteLine($"sending \"{message}\" as a sms");
-        //}
-
-        //internal static void SendFacebookMessage(string message)
-        //{
-        //    Console.WriteLine($"sending \"{message}\" as a facebookmessage");
-        //}
     }
 }

@@ -8,6 +8,6 @@ namespace Design_Patterns_Assignment.StrategyPattern.Messages
 {
     internal interface IMessage
     {
-        void Send(string message);
+        public void Send(string message);
     }
 }

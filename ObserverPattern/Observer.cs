@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment.ObserverPattern
 {
-    class Observer
+    internal class Observer : IObserver
     {
-        public static IEmail Email { get; set; }
-        public static IEmailWatcher EmailWatcher { get; set; }
+        public IEmail Email { get; set; }
+        public IEmailWatcher EmailWatcher { get; set; }
 
         public Observer(IEmail email, IEmailWatcher emailWatcher)
         {
@@ -19,7 +19,7 @@ namespace Design_Patterns_Assignment.ObserverPattern
             EmailWatcher = emailWatcher;
         }
 
-        internal static void Run()
+        public void Run()
         {
             Console.WriteLine("Observer");
 
@@ -44,5 +44,9 @@ namespace Design_Patterns_Assignment.ObserverPattern
             //Console.WriteLine();
         }
 
+        public void Update(DateTime Time)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

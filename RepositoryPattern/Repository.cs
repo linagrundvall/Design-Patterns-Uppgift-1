@@ -3,7 +3,7 @@ using System;
 
 namespace Design_Patterns_Assignment.RepositoryPattern
 {
-    internal class Repository
+    internal class Repository : IRepository
     {
         public IDataRepository DataRepository { get; set; }
 
@@ -12,7 +12,7 @@ namespace Design_Patterns_Assignment.RepositoryPattern
             DataRepository = dataRepository;
         }
 
-        internal void Run()
+        public void Run()
         {
             Console.WriteLine("Repository");
 

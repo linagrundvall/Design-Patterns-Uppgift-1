@@ -4,57 +4,61 @@ using System;
 
 namespace Design_Patterns_Assignment.StrategyPattern
 {
-    internal class Strategy
+    internal class Strategy : IStrategy
     {
-        public static IMessageHandler MessageHandler { get; set; }
-        public static IMessage Email { get; set; }
-        public static IMessage SMS { get; set; }
-        public static IMessage FacebookMessage { get; set; }
+        public IMessageHandler MessageHandler { get; set; }
+        public IMessage Email { get; set; }
+        public IMessage SMS { get; set; }
+        public IMessage FacebookMessage { get; set; }
 
-        public Strategy(IMessageHandler messageHandler, IMessage email, IMessage sms, IMessage facebookMessage)
+        public Strategy(IMessageHandler messageHandler, IEmail email, ISMS sms, IFacebookMessage facebookMessage)
         {
             MessageHandler = messageHandler;
             Email = email;
             SMS = sms;
             FacebookMessage = facebookMessage;
+            //MessageHandler.Message = Email;
         }
 
-        internal static void Run()
+        public void Run()
         {
-            // Refactor this code so that it uses the strategy Pattern
             Console.WriteLine("Strategy");
-            var message = "This is the message";
+            Console.WriteLine("Please write your message:");
+            //var message = Console.ReadLine();
+            var message = "Hej";
 
             Console.WriteLine("Select an action");
-            Console.WriteLine("1. Send message");
-            Console.WriteLine("2. Via Email");
-            Console.WriteLine("3. Via SMS");
-            Console.WriteLine("4. Via Facebook Message");
+            Console.WriteLine("1. Send message via Email");
+            Console.WriteLine("2. Send message via SMS");
+            Console.WriteLine("3. Send message via Facebook Message");
 
             while (true)
             {
                 var userInput = Console.ReadKey(intercept: true).Key;
                 switch (userInput)
                 {
+                    //case ConsoleKey.D1:
+                    //case ConsoleKey.NumPad1:
+                    //    Console.WriteLine("Sending message");
+                    //    MessageHandler.Send(message);
+                    //    break;
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
-                        Console.WriteLine("Sending message");
+                        Console.WriteLine("Sending message via Email");
+                        MessageHandler.Message = Email;
                         MessageHandler.Send(message);
                         break;
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
-                        Console.WriteLine("Sending via Email");
-                        MessageHandler.Message = Email;
+                        Console.WriteLine("Sending message via SMS");
+                        MessageHandler.Message = SMS;
+                        MessageHandler.Send(message);
                         break;
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
-                        Console.WriteLine("Sending via SMS");
-                        MessageHandler.Message = SMS;
-                        break;
-                    case ConsoleKey.D4:
-                    case ConsoleKey.NumPad4:
-                        Console.WriteLine("Sending via Facebook Message");
+                        Console.WriteLine("Sending message via Facebook Message");
                         MessageHandler.Message = FacebookMessage;
+                        MessageHandler.Send(message);
                         break;
                     default:
                         Console.Write("That is not a valid choice");

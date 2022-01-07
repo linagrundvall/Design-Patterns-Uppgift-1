@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment.StrategyPattern.Messages
 {
-    internal class Email : IMessage, IEmail
+    internal class Email : IEmail, IMessage
     {
         public void Send(string message)
         {
             Console.WriteLine($"sending \"{message}\" as an email");
         }
+
+        //internal static void SendEmail(string message)
+        //{
+        //    Console.WriteLine($"sending \"{message}\" as an email");
+        //}
     }
 }

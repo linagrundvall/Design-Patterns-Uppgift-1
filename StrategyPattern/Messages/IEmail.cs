@@ -1,6 +1,6 @@
 ﻿namespace Design_Patterns_Assignment.StrategyPattern.Messages
 {
-    internal interface IEmail
+    internal interface IEmail : IMessage
     {
         void Send(string message);
     }

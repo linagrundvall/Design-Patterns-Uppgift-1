@@ -4,7 +4,7 @@ namespace Design_Patterns_Assignment.RepositoryPattern.DataRepositories
 {
     class DataRepository : IDataRepository
     {
-        public static ISimulatedDatabase Db { get; set; }
+        public ISimulatedDatabase Db { get; set; }
 
         public DataRepository(ISimulatedDatabase db)
         {
