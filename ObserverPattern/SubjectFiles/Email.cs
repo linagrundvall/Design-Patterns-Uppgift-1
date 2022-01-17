@@ -4,22 +4,23 @@ using System.Collections.Generic;
 
 namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
 {
-    internal class Email : IEmail
+    class Email : IEmail
     {
-        public List<IObserver> Observers { get; set; }
+        public List<IWatcher> Observers { get; set; }
         public DateTime Time { get; set; }
+        public string NewEmail { get; set; }
 
         public Email()
         {
             Observers = new();
         }
 
-        public void RegisterObserver(IObserver observer)
+        public void RegisterObserver(IWatcher observer)
         {
             Observers.Add(observer);
         }
 
-        public void UnRegisterObserver(IObserver observer)
+        public void UnRegisterObserver(IWatcher observer)
         {
             Observers.Remove(observer);
         }
@@ -28,24 +29,26 @@ namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
         {
             foreach (var observer in Observers)
             {
-                observer.Update(Time);
+                observer.Check(NewEmail);
             }
         }
 
         public void UpdateTime()
         {
             Time = DateTime.Now;
-            NotifyObservers();
+            //NotifyObservers();
         }
 
-        internal string Check()
+        public void Check()
         {
             var evenMinute = DateTime.Now.Minute % 2;
             if (evenMinute==0)
             {
-                return "this is the email";
+                Console.WriteLine("This is the email.");
+                NotifyObservers();
             }
-            return null;
+            Console.WriteLine("No new emails.");
         }
+
     }
 }

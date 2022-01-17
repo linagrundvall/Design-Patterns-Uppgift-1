@@ -10,5 +10,7 @@ namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
     {
         DateTime Time { get; set; }
         void UpdateTime();
+        string NewEmail { get; set; }
+        void Check();
     }
 }

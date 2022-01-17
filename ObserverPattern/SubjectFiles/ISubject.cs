@@ -9,9 +9,9 @@ namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
 {
     interface ISubject
     {
-        List<IObserver> Observers { get; set; }
-        void RegisterObserver(IObserver observer);
-        void UnRegisterObserver(IObserver observer);
+        List<IWatcher> Observers { get; set; }
+        void RegisterObserver(IWatcher observer);
+        void UnRegisterObserver(IWatcher observer);
         void NotifyObservers();
     }
 }

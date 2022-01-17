@@ -8,8 +8,6 @@ namespace Design_Patterns_Assignment.ObserverPattern
     {
         IEmail Email { get; set; }
         IEmailWatcher EmailWatcher { get; set; }
-
         void Run();
-        void Update(DateTime Time);
     }
 }

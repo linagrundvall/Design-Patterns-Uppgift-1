@@ -27,26 +27,53 @@ namespace Design_Patterns_Assignment.ObserverPattern
             Email.RegisterObserver(EmailWatcher);
 
             // Menu
-
-            //Main Game Loop
-
-
-
-
+            Console.WriteLine("Please choose an action");
+            Console.WriteLine("");
+            Console.WriteLine("1. Check email");
+            Console.WriteLine("2. Subscribe/Unsubscribe");
+            Console.WriteLine("3. ");
 
             //var email = "";
 
-            //while (string.IsNullOrEmpty(email))
-            //{
-            //    email = Email.Check();
-            //}
-            //Console.WriteLine(email);
-            //Console.WriteLine();
-        }
+            while (true)
+            {
+                var userInput = Console.ReadKey(intercept: true).Key;
+                switch (userInput)
+                {
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
+                        Console.WriteLine("1");
+                        Email.Check();
+                        break;
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
+                        Console.WriteLine("2");
+                        if (Email.Observers.Contains(EmailWatcher))
+                        {
+                            Email.UnRegisterObserver(EmailWatcher);
+                        }
+                        else
+                        {
+                            Email.RegisterObserver(EmailWatcher);
+                        }
+                        break;
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+                        Console.WriteLine("3");
+                        break;
+                    default:
+                        Console.Write("That is not a valid choice");
+                        break;
+                }
 
-        public void Update(DateTime Time)
-        {
-            throw new NotImplementedException();
+
+                //while (string.IsNullOrEmpty(email))
+                //{
+                //    email = Email.Check();
+                //}
+                //Console.WriteLine(email);
+                //Console.WriteLine();
+            }
         }
     }
 }

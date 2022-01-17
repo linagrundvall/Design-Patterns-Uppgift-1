@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment.ObserverPattern.ObserverFiles
 {
-    interface IEmailWatcher : IWatcher
+    interface IWatcher
     {
+        void Check(string email);
+        void Update(DateTime Time);
     }
 }

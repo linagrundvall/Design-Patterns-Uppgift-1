@@ -9,12 +9,9 @@ namespace Design_Patterns_Assignment.ObserverPattern.ObserverFiles
 {
     class EmailWatcher : IEmailWatcher
     {
-        public IEmail Email { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        IEmailWatcher IObserver.EmailWatcher { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public void Run()
+        public void Check(string email)
         {
-            throw new NotImplementedException();
+            Console.WriteLine(email);
         }
 
         public void Update(DateTime time)

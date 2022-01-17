@@ -10,21 +10,21 @@ namespace Design_Patterns_Assignment
 {
     internal class Program
     {
+        public static Decorator Decorator { get; set; }
+        public static Repository Repository { get; set; }
+        public static Strategy Strategy { get; set; }
+        public static Observer Observer { get; set; }
+
+        public Program(Decorator decorator, Repository repository, Strategy strategy, Observer observer)
+        {
+            Decorator = decorator;
+            Repository = repository;
+            Strategy = strategy;
+            Observer = observer;
+        }
+
         private static void Main(string[] args)
         {
-            // Run Autofac Configure
-            var container = AFConfig.Configure();
-
-            // Create an instance of IApplication since we are not using a constructor here
-            //using var scope = container.BeginLifetimeScope();
-            //var app = scope.Resolve<IApplication>();
-
-            using var scope = container.BeginLifetimeScope();
-            var decorator = scope.Resolve<IDecorator>();
-            var repository = scope.Resolve<IRepository>();
-            var strategy = scope.Resolve<IStrategy>();
-            //var observer = scope.Resolve<IObserver>();
-
             Console.WriteLine("**************************");
             Console.WriteLine("Please choose a pattern");
             Console.WriteLine("");
@@ -40,29 +40,24 @@ namespace Design_Patterns_Assignment
             {
                  case ConsoleKey.D1:
                  case ConsoleKey.NumPad1:
-                    decorator.Run();
+                    Decorator.Run();
                     break;
                  case ConsoleKey.D2:
                  case ConsoleKey.NumPad2:
-                    repository.Run();
+                    Repository.Run();
                     break;
                 case ConsoleKey.D3:
                 case ConsoleKey.NumPad3:
-                    strategy.Run();
+                    Strategy.Run();
                     break;
                 case ConsoleKey.D4:
                 case ConsoleKey.NumPad4:
-                    //observer.Run();
+                    Observer.Run();
                     break;
                 default:
                     Console.WriteLine("Unknown command. Please try again.");
                      break;
             }
-
-            //Decorator.Run();
-            //Repository.Run();
-            //Strategy.Run();
-            //Observer.Run();
         }
     }
 }

@@ -8,6 +8,7 @@ using Autofac;
 using Design_Patterns_Assignment.DecoratorPattern;
 using Design_Patterns_Assignment.DecoratorPattern.Decorators;
 using Design_Patterns_Assignment.ObserverPattern;
+using Design_Patterns_Assignment.ObserverPattern.ObserverFiles;
 using Design_Patterns_Assignment.RepositoryPattern;
 using Design_Patterns_Assignment.RepositoryPattern.DataRepositories;
 using Design_Patterns_Assignment.RepositoryPattern.DB;
@@ -52,19 +53,8 @@ namespace Design_Patterns_Assignment
 
             //Observer Pattern
             builder.RegisterType<Observer>().As<IObserver>();
-
-
-
-            //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
-            //    .Where(i => i.Namespace.Contains("Decorators"))
-            //    .As(i => i.GetInterfaces()
-            //    .FirstOrDefault(n => n.Name == "I" + i.Name));
-
-
-            //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
-            //    .Where(i => i.Namespace.Contains("Word"))
-            //    .As(i => i.GetInterfaces()
-            //    .FirstOrDefault(n => n.Name == "I" + i.Name));
+            builder.RegisterType<EmailWatcher>().As<IEmailWatcher>();
+            builder.RegisterType<Email>().As<IEmail>();
 
             return builder.Build();
         }
