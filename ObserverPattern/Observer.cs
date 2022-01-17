@@ -10,10 +10,10 @@ namespace Design_Patterns_Assignment.ObserverPattern
 {
     internal class Observer : IObserver
     {
-        public IEmail Email { get; set; }
+        public IEmailSubject Email { get; set; }
         public IEmailWatcher EmailWatcher { get; set; }
 
-        public Observer(IEmail email, IEmailWatcher emailWatcher)
+        public Observer(IEmailSubject email, IEmailWatcher emailWatcher)
         {
             Email = email;
             EmailWatcher = emailWatcher;

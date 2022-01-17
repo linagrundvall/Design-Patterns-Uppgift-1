@@ -10,21 +10,37 @@ namespace Design_Patterns_Assignment
 {
     internal class Program
     {
-        public static Decorator Decorator { get; set; }
-        public static Repository Repository { get; set; }
-        public static Strategy Strategy { get; set; }
-        public static Observer Observer { get; set; }
+        //public static DecoratorMain Decorator { get; set; }
+        //public static Repository Repository { get; set; }
+        //public static Strategy Strategy { get; set; }
+        //public static Observer Observer { get; set; }
 
-        public Program(Decorator decorator, Repository repository, Strategy strategy, Observer observer)
-        {
-            Decorator = decorator;
-            Repository = repository;
-            Strategy = strategy;
-            Observer = observer;
-        }
+        //public Program(DecoratorMain decorator, Repository repository, Strategy strategy, Observer observer)
+        //{
+        //    Decorator = decorator;
+        //    Repository = repository;
+        //    Strategy = strategy;
+        //    Observer = observer;
+        //}
 
         private static void Main(string[] args)
         {
+            //Run Autofac Configure
+            var container = AFConfig.Configure();
+
+            //Create an instance of IApplication since we are not using a constructor here
+            //using var scope = container.BeginLifetimeScope();
+            //var app = scope.Resolve<IApplication>();
+            //app.Run();
+
+            using var scope = container.BeginLifetimeScope();
+            var decorator = scope.Resolve<IDecorator>();
+            var repository = scope.Resolve<IRepository>();
+            var strategy = scope.Resolve<IStrategy>();
+            var observer = scope.Resolve<IObserver>();
+
+
+
             Console.WriteLine("**************************");
             Console.WriteLine("Please choose a pattern");
             Console.WriteLine("");
@@ -34,29 +50,29 @@ namespace Design_Patterns_Assignment
             Console.WriteLine("4. Observer Pattern");
             Console.WriteLine("");
             Console.WriteLine("*************************");
-            
+
             var userInput = Console.ReadKey(intercept: true).Key;
             switch (userInput)
             {
-                 case ConsoleKey.D1:
-                 case ConsoleKey.NumPad1:
-                    Decorator.Run();
+                case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
+                    decorator.Run();
                     break;
-                 case ConsoleKey.D2:
-                 case ConsoleKey.NumPad2:
-                    Repository.Run();
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
+                    repository.Run();
                     break;
                 case ConsoleKey.D3:
                 case ConsoleKey.NumPad3:
-                    Strategy.Run();
+                    strategy.Run();
                     break;
                 case ConsoleKey.D4:
                 case ConsoleKey.NumPad4:
-                    Observer.Run();
+                    observer.Run();
                     break;
                 default:
                     Console.WriteLine("Unknown command. Please try again.");
-                     break;
+                    break;
             }
         }
     }

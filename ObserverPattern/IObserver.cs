@@ -6,7 +6,7 @@ namespace Design_Patterns_Assignment.ObserverPattern
 {
     internal interface IObserver
     {
-        IEmail Email { get; set; }
+        IEmailSubject Email { get; set; }
         IEmailWatcher EmailWatcher { get; set; }
         void Run();
     }

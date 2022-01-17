@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
 {
-    class Email : IEmail
+    class EmailSubject : IEmailSubject
     {
         public List<IWatcher> Observers { get; set; }
         public DateTime Time { get; set; }
         public string NewEmail { get; set; }
 
-        public Email()
+        public EmailSubject()
         {
             Observers = new();
         }

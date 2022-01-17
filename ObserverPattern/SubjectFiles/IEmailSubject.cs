@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
 {
-    interface IEmail : ISubject
+    interface IEmailSubject : ISubject
     {
         DateTime Time { get; set; }
         void UpdateTime();

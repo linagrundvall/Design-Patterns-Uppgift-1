@@ -3,11 +3,11 @@ using Design_Patterns_Assignment.DecoratorPattern.Decorators;
 
 namespace Design_Patterns_Assignment.DecoratorPattern
 {
-    internal class Decorator : IDecorator
+    internal class DecoratorMain : IDecorator
     {
         public IWord Word { get; set; }
 
-        public Decorator(IRegularWord regularWord)
+        public DecoratorMain(IRegularWord regularWord)
         {
             Word = regularWord;
         }

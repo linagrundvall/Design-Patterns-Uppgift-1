@@ -9,6 +9,7 @@ using Design_Patterns_Assignment.DecoratorPattern;
 using Design_Patterns_Assignment.DecoratorPattern.Decorators;
 using Design_Patterns_Assignment.ObserverPattern;
 using Design_Patterns_Assignment.ObserverPattern.ObserverFiles;
+using Design_Patterns_Assignment.ObserverPattern.SubjectFiles;
 using Design_Patterns_Assignment.RepositoryPattern;
 using Design_Patterns_Assignment.RepositoryPattern.DataRepositories;
 using Design_Patterns_Assignment.RepositoryPattern.DB;
@@ -24,6 +25,8 @@ namespace Design_Patterns_Assignment
         {
             var builder = new ContainerBuilder();
 
+            builder.RegisterType<Application>().As<IApplication>();
+
             //Decorator Pattern
             builder.RegisterType<Bold>().As<IBold>();
             builder.RegisterType<Deleted>().As<IDeleted>();
@@ -37,7 +40,7 @@ namespace Design_Patterns_Assignment
             builder.RegisterType<SuperScript>().As<ISuperScript>();
 
             builder.RegisterType<RegularWord>().As<IRegularWord>();
-            builder.RegisterType<Decorator>().As<IDecorator>();
+            builder.RegisterType<DecoratorMain>().As<IDecorator>();
 
             //Repository Pattern
             builder.RegisterType<Repository>().As<IRepository>();
@@ -54,7 +57,7 @@ namespace Design_Patterns_Assignment
             //Observer Pattern
             builder.RegisterType<Observer>().As<IObserver>();
             builder.RegisterType<EmailWatcher>().As<IEmailWatcher>();
-            builder.RegisterType<Email>().As<IEmail>();
+            builder.RegisterType<EmailSubject>().As<IEmailSubject>();
 
             return builder.Build();
         }
