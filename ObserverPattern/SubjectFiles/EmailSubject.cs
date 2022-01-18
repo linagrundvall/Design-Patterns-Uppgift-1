@@ -37,13 +37,19 @@ namespace Design_Patterns_Assignment.ObserverPattern.SubjectFiles
 
         public void Check()
         {
-            var evenMinute = DateTime.Now.Minute % 2;
-            if (evenMinute == 0)
+            foreach (var observer in Observers)
             {
-                Console.WriteLine("This is the email.");
-                NotifyObservers();
+                var evenMinute = DateTime.Now.Minute % 2;
+                if (evenMinute == 0)
+                {
+                    Console.WriteLine("This is the new email.");
+                    NotifyObservers();
+                }
+                else
+                {
+                Console.WriteLine("No new emails.");
+                }
             }
-            Console.WriteLine("No new emails.");
         }
     }
 }
