@@ -25,8 +25,6 @@ namespace Design_Patterns_Assignment
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<Application>().As<IApplication>();
-
             //Decorator Pattern
             builder.RegisterType<Bold>().As<IBold>();
             builder.RegisterType<Deleted>().As<IDeleted>();

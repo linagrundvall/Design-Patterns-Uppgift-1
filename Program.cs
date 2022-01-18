@@ -10,36 +10,16 @@ namespace Design_Patterns_Assignment
 {
     internal class Program
     {
-        //public static DecoratorMain Decorator { get; set; }
-        //public static Repository Repository { get; set; }
-        //public static Strategy Strategy { get; set; }
-        //public static Observer Observer { get; set; }
-
-        //public Program(DecoratorMain decorator, Repository repository, Strategy strategy, Observer observer)
-        //{
-        //    Decorator = decorator;
-        //    Repository = repository;
-        //    Strategy = strategy;
-        //    Observer = observer;
-        //}
-
         private static void Main(string[] args)
         {
             //Run Autofac Configure
             var container = AFConfig.Configure();
-
-            //Create an instance of IApplication since we are not using a constructor here
-            //using var scope = container.BeginLifetimeScope();
-            //var app = scope.Resolve<IApplication>();
-            //app.Run();
 
             using var scope = container.BeginLifetimeScope();
             var decorator = scope.Resolve<IDecorator>();
             var repository = scope.Resolve<IRepository>();
             var strategy = scope.Resolve<IStrategy>();
             var observer = scope.Resolve<IObserver>();
-
-
 
             Console.WriteLine("**************************");
             Console.WriteLine("Please choose a pattern");
