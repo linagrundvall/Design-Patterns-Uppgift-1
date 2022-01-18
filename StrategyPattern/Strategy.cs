@@ -29,6 +29,7 @@ namespace Design_Patterns_Assignment.StrategyPattern
             Console.WriteLine("1. Send message via Email");
             Console.WriteLine("2. Send message via SMS");
             Console.WriteLine("3. Send message via Facebook Message");
+            Console.WriteLine("4. Exit the program");
 
             while (true)
             {
@@ -49,6 +50,10 @@ namespace Design_Patterns_Assignment.StrategyPattern
                     case ConsoleKey.NumPad3:
                         MessageHandler.Message = FacebookMessage;
                         MessageHandler.Send(message);
+                        break;
+                    case ConsoleKey.D4:
+                    case ConsoleKey.NumPad4:
+                        Environment.Exit(0);
                         break;
                     default:
                         Console.Write("That is not a valid choice");

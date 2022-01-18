@@ -23,17 +23,13 @@ namespace Design_Patterns_Assignment.ObserverPattern
         {
             Console.WriteLine("Observer");
 
-            //Register Observer
             Email.RegisterObserver(EmailWatcher);
 
-            // Menu
             Console.WriteLine("Please choose an action");
             Console.WriteLine("");
             Console.WriteLine("1. Check email");
             Console.WriteLine("2. Subscribe/Unsubscribe");
-            Console.WriteLine("3. ");
-
-            //var email = "";
+            Console.WriteLine("3. Exit the program");
 
             while (true)
             {
@@ -42,12 +38,11 @@ namespace Design_Patterns_Assignment.ObserverPattern
                 {
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
-                        Console.WriteLine("1");
+                        
                         Email.Check();
                         break;
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
-                        Console.WriteLine("2");
                         if (Email.Observers.Contains(EmailWatcher))
                         {
                             Email.UnRegisterObserver(EmailWatcher);
@@ -59,20 +54,12 @@ namespace Design_Patterns_Assignment.ObserverPattern
                         break;
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
-                        Console.WriteLine("3");
+                        Environment.Exit(0);
                         break;
                     default:
                         Console.Write("That is not a valid choice");
                         break;
                 }
-
-
-                //while (string.IsNullOrEmpty(email))
-                //{
-                //    email = Email.Check();
-                //}
-                //Console.WriteLine(email);
-                //Console.WriteLine();
             }
         }
     }

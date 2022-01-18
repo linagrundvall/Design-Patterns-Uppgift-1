@@ -48,6 +48,7 @@ namespace Design_Patterns_Assignment
             Console.WriteLine("2. Repository Pattern");
             Console.WriteLine("3. Strategy Pattern");
             Console.WriteLine("4. Observer Pattern");
+            Console.WriteLine("5. Exit Program");
             Console.WriteLine("");
             Console.WriteLine("*************************");
 
@@ -69,6 +70,10 @@ namespace Design_Patterns_Assignment
                 case ConsoleKey.D4:
                 case ConsoleKey.NumPad4:
                     observer.Run();
+                    break;
+                case ConsoleKey.D5:
+                case ConsoleKey.NumPad5:
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Unknown command. Please try again.");

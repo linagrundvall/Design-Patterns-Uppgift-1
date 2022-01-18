@@ -13,10 +13,5 @@ namespace Design_Patterns_Assignment.ObserverPattern.ObserverFiles
         {
             Console.WriteLine(email);
         }
-
-        public void Update(DateTime time)
-            {
-                Console.WriteLine($"The current time is {time}");
-            }
     }
 }

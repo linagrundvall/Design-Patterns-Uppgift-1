@@ -40,7 +40,7 @@ namespace Design_Patterns_Assignment
             builder.RegisterType<SuperScript>().As<ISuperScript>();
 
             builder.RegisterType<RegularWord>().As<IRegularWord>();
-            builder.RegisterType<DecoratorMain>().As<IDecorator>();
+            builder.RegisterType<Decorator>().As<IDecorator>();
 
             //Repository Pattern
             builder.RegisterType<Repository>().As<IRepository>();

@@ -3,11 +3,11 @@ using Design_Patterns_Assignment.DecoratorPattern.Decorators;
 
 namespace Design_Patterns_Assignment.DecoratorPattern
 {
-    internal class DecoratorMain : IDecorator
+    internal class Decorator : IDecorator
     {
         public IWord Word { get; set; }
 
-        public DecoratorMain(IRegularWord regularWord)
+        public Decorator(IRegularWord regularWord)
         {
             Word = regularWord;
         }
@@ -34,6 +34,7 @@ namespace Design_Patterns_Assignment.DecoratorPattern
             Console.WriteLine();
             Console.WriteLine("Type the tags you want separated by space");
             Console.WriteLine("Type Done when you are done");
+            Console.WriteLine("Type E to exit the program");
 
             while (true)
             {
@@ -77,6 +78,9 @@ namespace Design_Patterns_Assignment.DecoratorPattern
                         case "done":
                             Console.WriteLine($"Your chosen tags are: \n{ Word.GetTag()}");
                             Word = newWord;
+                            break;
+                        case "e" or "E":
+                            Environment.Exit(0);
                             break;
                         default:
                             Console.Write("That is not a valid choice");

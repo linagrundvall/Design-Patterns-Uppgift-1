@@ -9,6 +9,5 @@ namespace Design_Patterns_Assignment.ObserverPattern.ObserverFiles
     interface IWatcher
     {
         void Check(string email);
-        void Update(DateTime Time);
     }
 }
